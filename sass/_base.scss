@@ -1,0 +1,200 @@
+/* customize these ---> colors */
+$hi_my_name_is_font_color: #2f2e36;
+$hi_my_name_is_background_color: #fcfcfc;
+$middle_stripe_font_color: #0b142a;
+$middle_stripe_background_color: #b4c1d6;
+$link_color: $hi_my_name_is_background_color;
+
+
+/****************************************************/
+/* change what follows below at your own risk (^^); */
+/****************************************************/
+
+/* font families */
+$mono: Monaco, "Lucida Grande", monospace;
+$sans: "PT Sans", "Helvetica Neue", Arial, sans-serif;
+$serif: Georgia, Times, "Times New Roman", serif;
+
+/* custom functions */
+@function calc-em($target-px, $context) {
+  @return ($target-px / $context) * 1em;
+}
+
+html {
+  font: normal 100% $serif; // establishes a baseline font size (16px)
+  color: $middle_stripe_font_color;
+  background-color: $hi_my_name_is_background_color;
+}
+
+#page {
+  width: 100%;
+}
+
+#top {
+  /* header background color inherited from html above */
+  height: calc-em(180px, 16px);
+}
+
+#bottom {
+  background-color: $middle_stripe_background_color;
+}
+
+header {
+  color: $hi_my_name_is_font_color;
+  font-family: $mono;
+}
+
+section {
+  width: 60%;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+section a {
+  &:link {
+    color: $link_color;
+    text-decoration: none;
+  }
+  &:visited {
+    color: $link_color;
+  }
+  &:hover {
+    color: red;
+  }
+  &:active {
+    color: $hi_my_name_is_font_color;
+  }
+}
+
+footer .outer {
+  width: 128px;
+  margin: auto;
+}
+
+footer .inner {
+  padding-top: 1em;
+}
+
+footer .inner ul {
+  width: 84px;
+  margin: auto;
+}
+
+#social {
+  padding-top: 0.5em;
+  li {
+    display: inline;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+/* Biggest */
+@media screen and (min-width: 960px) {
+  header {
+    padding-top: calc-em(56px, 16px);
+    h1 {
+      font-size: calc-em(80px, 16px); 
+    }
+    h2 {
+      font-size: calc-em(36px, 16px);
+      padding-bottom: calc-em(8px, 16px);
+    }
+  }
+  .content {
+    font-size: calc-em(28px, 16px);
+    padding-top: calc-em(16px, 16px);
+    p {
+      padding-bottom: calc-em(16px, 16px);
+      line-height: 1.25em;
+    }
+  }
+}
+
+/* Big */
+@media screen and (max-width: 959px) {
+  #top {
+    height: calc-em(160px, 16px);
+  }
+  header {
+    padding-top: calc-em(63px, 16px);
+    h1 {
+      font-size: calc-em(64px, 16px);
+    }
+    h2 {
+      font-size: calc-em(28.8px, 16px);
+      padding-bottom: calc-em(6.39px, 16px);
+    }
+  }
+  .content {
+    font-size: calc-em(26px, 16px);
+    padding-top: calc-em(16px, 16px);
+    p {
+      padding-bottom: calc-em(16px, 16px);
+      line-height: 1.2em;
+    }
+  }
+}
+
+/* Medium */
+@media screen and (max-width: 768px) {
+  #top {
+    height: calc-em(140px, 16px);
+  }
+  header {
+    padding-top: calc-em(66px, 16px);
+    h1 {
+      font-size: calc-em(50px, 16px);
+    }
+    h2 {
+      font-size: calc-em(22.5px, 16px);
+      padding-bottom: calc-em(6px, 16px);
+    }
+  }
+  .content {
+    font-size: calc-em(20px, 16px);
+  }
+}
+
+/* Small */
+@media screen and (max-width: 600px) {
+  #top {
+    height: calc-em(100px, 16px);
+  }
+  header {
+    padding-top: calc-em(41px, 16px);
+    h1 {
+      font-size: calc-em(40px, 16px);
+    }
+    h2 {
+      font-size: calc-em(18px, 16px);
+      padding-bottom: calc-em(5px, 16px);
+    }
+  }
+  .content {
+    font-size: calc-em(18px, 16px);
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  header {
+    padding-top: calc-em(51px, 16px);
+    h1 {
+      font-size: calc-em(32px, 16px);
+    }
+    h2 {
+      font-size: calc-em(16px, 16px);
+    }
+  }
+  section {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
