@@ -1,5 +1,7 @@
 # Name Card
 
+![Screenshot](https://raw.github.com/enocom/name-card/master/screenshot.png)
+
 A generic name card built on Sinatra and styled with Sass with a custom 404 page. Plus, it's responsive and is ready to be deployed to Heroku. See my own [site](http://www.enocompton.net) for an example.
 
 ## Setup
